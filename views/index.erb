@@ -1,26 +1,40 @@
 <html lang="en">
 <head>
   <style>
-    /* body {
-      height: 1vh;
-      width: 1vw;
-    }
-     */
-    header {
-      height: 20%;
+    body {
+      height: 100%;
       width: 100%;
-      background-color: blue;
+    }
+    
+    header {
+      height: 15%;
+      width: 100%;
+      background-color: grey;
     }
 
     main {
-      text-align : center;
-      padding: 20%;
+      height: 60%;
+      text-align: center;
+      font-size: 2em;
     }
 
     footer {
-      height: 20%;
+      height: 15%;
       width: 100%;
-      background-color: blue;
+      background-color: grey;
+    }
+
+    textarea {
+      padding: 10px;
+    }
+
+    form {
+      display: inline;
+    }
+
+    input {
+      display: inline;
+      margin: 1%;
     }
   
   </style>
@@ -31,11 +45,11 @@
   <main>
   <h1>Caesar's Cipher!</h1>
     <form>
-      <input type='text' name='string' value='Give me a string!'/>
-      <input type='text' name='key' value='Enter a numeric key!'/>
-      <input type='submit' value='Cipher!' />
+      <textarea name='string' rows="4" cols="40" placeholder='Give me a string!'></textarea><br/>
+      <input type='text' name='key' placeholder='Enter a numeric key!'/><br/>
+      <input type='submit' value='Cipher!' method="POST" /><br/>
     </form>
-    <h3>Your code:</h3>
+    <h3>Your code:</h3><br/>
     <p><%= code %></p>
   </main>
   <footer>

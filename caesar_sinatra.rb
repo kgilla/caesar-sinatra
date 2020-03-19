@@ -1,9 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-string = ""
-key = ""
-
 def encode(string, key)
   converted = ""
   string.each_byte do |c|
@@ -39,8 +36,11 @@ end
 get '/' do 
   string = params["string"]
   key = params["key"].to_i
-  code = encode(string, key)
-  erb :index, :locals => { 
-    :code => code
-  }
+  if string == "" || key.nil? 
+    code = "Enter your code and a numeric key!"
+  else
+    code = encode(string,key)
+  end
+  erb :index, :locals => { :code => code }
 end
+
